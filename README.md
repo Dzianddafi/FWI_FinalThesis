@@ -14,6 +14,7 @@ This research aims to:
 Forward modeling, as described by Virieux and Operto (2009), refers to the process of simulating seismic wave propagation through a given subsurface model using the wave equation. Starting from a defined source function, such as a Ricker wavelet, the wave equation is numerically solved—commonly with finite-difference, finite-element, or spectral-element methods—to generate synthetic seismic data at receiver positions.
 
 <img width="282" height="343" alt="image" src="https://github.com/user-attachments/assets/94227045-3ccd-4239-94e3-26079c56798f" />  
+  
 Figure 1 Forward modeling illustration  
   
 ### Adjoint Modeling
