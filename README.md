@@ -13,7 +13,8 @@ This research aims to:
 ### Forward Modeling  
 Forward modeling, as described by Virieux and Operto (2009), refers to the process of simulating seismic wave propagation through a given subsurface model using the wave equation. Starting from a defined source function, such as a Ricker wavelet, the wave equation is numerically solved—commonly with finite-difference, finite-element, or spectral-element methods—to generate synthetic seismic data at receiver positions.
 
-<img width="282" height="343" alt="image" src="https://github.com/user-attachments/assets/94227045-3ccd-4239-94e3-26079c56798f" />  
+<img width="588" height="721" alt="image" src="https://github.com/user-attachments/assets/0df50046-2e57-4331-a95b-06a8ef23cd0e" />
+
   
 Figure 1 Forward modeling illustration  
   
@@ -32,22 +33,27 @@ Multiscale Full Waveform Inversion (FWI) is a strategy designed to mitigate the 
 The purpose of this Deep Learning phase is to create a better update model through a UNet architecture. According to Ronneberger et al. (2015), the U-Net architecture is a convolutional neural network (CNN) specifically designed for semantic segmentation tasks, originally in the biomedical imaging domain. Its name comes from its U-shaped structure, consisting of two main paths: Encoder and Decoder.  
   
 <img width="718" height="480" alt="image" src="https://github.com/user-attachments/assets/b4309151-fb14-4ffd-a9ab-8b773fb3ad0a" />    
+  
 Figure 2 The UNet Architecture (Ronneberger, et al., 2015)  
 
 In order to generate the training data, Born modeling (demigration) and its adjoint (migration) is proposed as we strongly refer to Alfarhan, et al. 2024. The product of this approach is the blurred version of gradient, meaning that we can put it as the training data and clear gradient that we produce through the adjoint modeling phase as the label data. By using the MSE loss in PyTorch, we can see that the loss should be decaying as the epochs increases. The result of the UNet model is the enhanced update model as UNet is playing as the inverse Hessian.  
 
 <img width="512" height="480" alt="image" src="https://github.com/user-attachments/assets/a21e9866-73e5-4093-a484-7d914d2b9d6d" />  
+  
 Figure 3 The design of the deep learning implementation. similar to the workflow proposed by Alfarhan, et al., 2024.  
 
 ## Result
 <img width="715" height="575" alt="image" src="https://github.com/user-attachments/assets/11adf57e-f848-405b-8623-cdc4e6af9892" />    
+  
 *Title for the third model should be "Final Model GN-UNet" instead of "Final Model Newton (UNet)"  
 Figure 4 The final result of the method (L-BFGS, Conjugate Gradient, GN-UNet)  
 
 <img width="407" height="327" alt="image" src="https://github.com/user-attachments/assets/adaaf4b7-30d3-4e29-b97c-dde968853632" />  
+  
 Figure 5 MSE and MAE loss over 3 different scale (30 simulations each scale [5 Hz, 10 Hz, and 25Hz cutoff])  
 
 <img width="836" height="408" alt="image" src="https://github.com/user-attachments/assets/e3e042eb-9af3-478c-bfee-415b52f76b6d" />
+  
 Figure 6 Data loss evolution througout the simulations. + UNet loss in first FWI iteration (50 epochs)  
 
 ## Key Takeaways  
