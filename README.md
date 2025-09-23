@@ -13,7 +13,7 @@ This research aims to:
 ### Forward Modeling  
 Forward modeling, as described by Virieux and Operto (2009), refers to the process of simulating seismic wave propagation through a given subsurface model using the wave equation. Starting from a defined source function, such as a Ricker wavelet, the wave equation is numerically solved—commonly with finite-difference, finite-element, or spectral-element methods—to generate synthetic seismic data at receiver positions.
 
-  <img width="282" height="343" alt="image" src="https://github.com/user-attachments/assets/94227045-3ccd-4239-94e3-26079c56798f" />
+<img width="282" height="343" alt="image" src="https://github.com/user-attachments/assets/94227045-3ccd-4239-94e3-26079c56798f" />  
 Figure 1 Forward modeling illustration  
   
 ### Adjoint Modeling
@@ -30,7 +30,7 @@ Multiscale Full Waveform Inversion (FWI) is a strategy designed to mitigate the 
 ### Deep Learning (UNet)  
 The purpose of this Deep Learning phase is to create a better update model through a UNet architecture. According to Ronneberger et al. (2015), the U-Net architecture is a convolutional neural network (CNN) specifically designed for semantic segmentation tasks, originally in the biomedical imaging domain. Its name comes from its U-shaped structure, consisting of two main paths: Encoder and Decoder.  
   
-<img width="718" height="480" alt="image" src="https://github.com/user-attachments/assets/b4309151-fb14-4ffd-a9ab-8b773fb3ad0a" />  
+<img width="718" height="480" alt="image" src="https://github.com/user-attachments/assets/b4309151-fb14-4ffd-a9ab-8b773fb3ad0a" />    
 Figure 2 The UNet Architecture (Ronneberger, et al., 2015)  
 
 In order to generate the training data, Born modeling (demigration) and its adjoint (migration) is proposed as we strongly refer to Alfarhan, et al. 2024. The product of this approach is the blurred version of gradient, meaning that we can put it as the training data and clear gradient that we produce through the adjoint modeling phase as the label data. By using the MSE loss in PyTorch, we can see that the loss should be decaying as the epochs increases. The result of the UNet model is the enhanced update model as UNet is playing as the inverse Hessian.  
@@ -39,7 +39,7 @@ In order to generate the training data, Born modeling (demigration) and its adjo
 Figure 3 The design of the deep learning implementation. similar to the workflow proposed by Alfarhan, et al., 2024.  
 
 ## Result
-<img width="715" height="575" alt="image" src="https://github.com/user-attachments/assets/11adf57e-f848-405b-8623-cdc4e6af9892" />  
+<img width="715" height="575" alt="image" src="https://github.com/user-attachments/assets/11adf57e-f848-405b-8623-cdc4e6af9892" />    
 *Title for the third model should be "Final Model GN-UNet" instead of "Final Model Newton (UNet)"  
 Figure 4 The final result of the method (L-BFGS, Conjugate Gradient, GN-UNet)  
 
@@ -47,7 +47,7 @@ Figure 4 The final result of the method (L-BFGS, Conjugate Gradient, GN-UNet)
 Figure 5 MSE and MAE loss over 3 different scale (30 simulations each scale [5 Hz, 10 Hz, and 25Hz cutoff])  
 
 <img width="836" height="408" alt="image" src="https://github.com/user-attachments/assets/e3e042eb-9af3-478c-bfee-415b52f76b6d" />
-Figure 6 Data loss evolution througout the simulations. + UNet loss in first FWI iteration (50 epochs)
+Figure 6 Data loss evolution througout the simulations. + UNet loss in first FWI iteration (50 epochs)  
 
 ## Key Takeaways  
 Thus, conclusions were drawn that address the research objectives presented at the beginning. The conclusions are as follows:  
@@ -72,4 +72,3 @@ Schuster, G. T., Chen, Y., Shi, Y., Feng, S., Liu, Z., Feng, Z., Huang, Y., Yang
 Tarantola, A. (1984). Inversion of seismic reflection data in the acoustic approximation, GEOPHYSICS, 49(8), 1259–1266. https://doi.org/10.1190/1.1441754  
 Virieux, J., dan Operto, S. (2009). An overview of full-waveform inversion in exploration geophysics, GEOPHYSICS, 74(6), WCC1–WCC26. https://doi.org/10.1190/1.3238367  
 Wang, Z., Bovik, A. C., Sheikh, H. R., dan Simoncelli, E. P. (2004). Image quality assessment: From error visibility to structural similarity, IEEE Transactions  
-<img width="1433" height="327" alt="image" src="https://github.com/user-attachments/assets/97bd5038-d489-43a5-93e6-c542a860c1ea" />
