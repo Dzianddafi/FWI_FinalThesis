@@ -78,3 +78,5 @@ Schuster, G. T., Chen, Y., Shi, Y., Feng, S., Liu, Z., Feng, Z., Huang, Y., Yang
 Tarantola, A. (1984). Inversion of seismic reflection data in the acoustic approximation, GEOPHYSICS, 49(8), 1259–1266. https://doi.org/10.1190/1.1441754  
 Virieux, J., dan Operto, S. (2009). An overview of full-waveform inversion in exploration geophysics, GEOPHYSICS, 74(6), WCC1–WCC26. https://doi.org/10.1190/1.3238367  
 Wang, Z., Bovik, A. C., Sheikh, H. R., dan Simoncelli, E. P. (2004). Image quality assessment: From error visibility to structural similarity, IEEE Transactions  
+
+Throughout the filtering phase, I used https://github.com/mrava87/Devito-fwi as the reference since his code are easy to comprehend  
