@@ -1,7 +1,6 @@
 # Final Thesis
 
-## Title:  
-A Deep Learning Implementation for Inverse Hessian Estimation in Multiscale Full Waveform Inversion
+## A Deep Learning Implementation for Inverse Hessian Estimation in Multiscale Full Waveform Inversion
 
 ## Research Purposes  
 This research aims to:
